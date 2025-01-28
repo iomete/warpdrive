@@ -43,6 +43,9 @@ set(WARPDRIVE_VERSION "0.9.0-SNAPSHOT")
 
 string(REGEX MATCH "^[0-9]+\\.[0-9]+\\.[0-9]+" WARPDRIVE_BASE_VERSION "${WARPDRIVE_VERSION}")
 
+# TODO: I am keeping it for building on our windows machine
+set(CMAKE_TOOLCHAIN_FILE "D:/src/vcpkg/scripts/buildsystems/vcpkg.cmake")
+
 if (DEFINED CMAKE_TOOLCHAIN_FILE)
   include(${CMAKE_TOOLCHAIN_FILE})
 endif()
@@ -564,7 +567,7 @@ if (NOT ODBCABSTRACTION_REPO)
   if (DEFINED ENV{ODBCABSTRACTION_REPO})
     set(ODBCABSTRACTION_REPO "$ENV{ODBCABSTRACTION_REPO}")
   else()
-    set(ODBCABSTRACTION_REPO "https://github.com/dremio/flightsql-odbc")
+    set(ODBCABSTRACTION_REPO "https://github.com/iomete/flightsql-odbc")
   endif()
 endif()
 
@@ -573,7 +576,7 @@ if (NOT ODBCABSTRACTION_GIT_TAG)
   if (DEFINED ENV{ODBCABSTRACTION_GIT_TAG})
     set(ODBCABSTRACTION_GIT_TAG "$ENV{ODBCABSTRACTION_GIT_TAG}")
   else()
-    set(ODBCABSTRACTION_GIT_TAG "d2a1029b0641febb0872831bec1b90fe3f635dd3")
+    set(ODBCABSTRACTION_GIT_TAG "33ae70b6169920800938090bb87c6683bd53e053")
   endif()
 endif()
 
